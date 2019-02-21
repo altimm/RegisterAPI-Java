@@ -1,4 +1,4 @@
-package edu.uark.models.repositories;
+/*package edu.uark.models.repositories;
 
 import edu.uark.dataaccess.repository.BaseRepository;
 import edu.uark.dataaccess.repository.DatabaseTable;
@@ -42,3 +42,4 @@ public class EmployeeRepository extends BaseRepository<EmployeeEntity> implement
 		super(DatabaseTable.Employee);
 	}
 }
+*/ //Commenting out until there is a working interface

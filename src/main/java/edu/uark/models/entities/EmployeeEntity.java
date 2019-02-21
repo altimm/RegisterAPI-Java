@@ -1,4 +1,4 @@
-package edu.uark.models.entities;
+/*package edu.uark.models.entities;
 
 import edu.uark.dataaccess.entities.BaseEntity;
 import edu.uark.dataaccess.repository.DatabaseTable;
@@ -75,3 +75,4 @@ public class EmployeeEntity extends BaseEntity<EmployeeEntity> {
 		this.lookupCode = apiProduct.getLookupCode();
 	}
 }
+*/ // Commenting out until there is a working interface
