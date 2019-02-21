@@ -7,12 +7,12 @@ import edu.uark.dataaccess.repository.helpers.SQLComparisonType;
 import edu.uark.dataaccess.repository.helpers.where.WhereClause;
 import edu.uark.dataaccess.repository.helpers.where.WhereContainer;
 import edu.uark.models.entities.EmployeeEntity;
-import edu.uark.models.entities.fieldnames.ProductFieldNames;
-import edu.uark.models.repositories.interfaces.ProductRepositoryInterface;
+import edu.uark.models.entities.fieldnames.EmployeeFieldNames;
+import edu.uark.models.repositories.interfaces.EmployeeRepositoryInterface;
 
 import java.sql.SQLException;
 
-public class EmployeeRepository extends BaseRepository<EmployeeEntity> implements ProductRepositoryInterface {
+public class EmployeeRepository extends BaseRepository<EmployeeEntity> implements EmployeeRepositoryInterface {
 	@Override
 	public EmployeeEntity byLookupCode(String lookupCode) {
 		return this.firstOrDefaultWhere(
@@ -20,7 +20,7 @@ public class EmployeeRepository extends BaseRepository<EmployeeEntity> implement
 				(new WhereClause()).
 					postgreFunction(PostgreFunctionType.LOWER).
 					table(this.primaryTable).
-					fieldName(ProductFieldNames.LOOKUP_CODE).
+					fieldName(EmployeeFieldNames.LOOKUP_CODE).
 					comparison(SQLComparisonType.EQUALS)
 			),
 			(ps) -> {
@@ -39,6 +39,6 @@ public class EmployeeRepository extends BaseRepository<EmployeeEntity> implement
 	}
 
 	public EmployeeRepository() {
-		super(DatabaseTable.PRODUCT);
+		super(DatabaseTable.Employee);
 	}
 }
