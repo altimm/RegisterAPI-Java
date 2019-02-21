@@ -9,7 +9,7 @@ import org.apache.commons.lang3.StringUtils;
 import edu.uark.dataaccess.entities.BaseEntity;
 import edu.uark.dataaccess.repository.DatabaseTable;
 import edu.uark.models.api.Product;
-import edu.uark.models.entities.fieldnames.ProductFieldNames;
+import edu.uark.models.entities.fieldnames.ProductFieldNames; 
 
 public class ProductEntity extends BaseEntity<ProductEntity> {
 	@Override

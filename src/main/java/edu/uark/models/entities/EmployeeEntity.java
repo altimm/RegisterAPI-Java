@@ -3,13 +3,13 @@ package edu.uark.models.entities;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Map;
-m
+
 import org.apache.commons.lang3.StringUtils;
 
 import edu.uark.dataaccess.entities.BaseEntity;
 import edu.uark.dataaccess.repository.DatabaseTable;
-import edu.uark.models.api.Product;
-import edu.uark.models.entities.fieldnames.ProductFieldNames;
+import edu.uark.models.api.Employee;
+import edu.uark.models.entities.fieldnames.EmployeeFieldNames;
 
 public class EmployeeEntity extends BaseEntity<EmployeeEntity> {
 	
@@ -60,21 +60,21 @@ public class EmployeeEntity extends BaseEntity<EmployeeEntity> {
 		apiEmployee.setId(this.getId());
 		apiEmployee.setCreatedOn(this.getCreatedOn());
 		
-		return apiProduct;
+		return apiEmployee;
 	}
 	
 	public EmployeeEntity() {
-		super(DatabaseTable.PRODUCT);
+		super(DatabaseTable.EMPLOYEE);
 		
 		this.count = -1;
 		this.lookupCode = StringUtils.EMPTY;
 	}
 	
-	public ProductEntity(Product apiProduct) {
-		super(DatabaseTable.PRODUCT);
+	public ProductEntity(Product apiEmployee) {
+		super(DatabaseTable.EMPLOYEE);
 		
-		this.count = apiProduct.getCount();
-		this.lookupCode = apiProduct.getLookupCode();
+		this.count = apiEmployee.getCount();
+		this.lookupCode = apiEmployee.getLookupCode();
 	}
 	
 }
