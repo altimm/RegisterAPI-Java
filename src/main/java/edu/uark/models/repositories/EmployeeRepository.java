@@ -1,4 +1,4 @@
-/*package edu.uark.models.repositories;
+package edu.uark.models.repositories;
 
 import edu.uark.dataaccess.repository.BaseRepository;
 import edu.uark.dataaccess.repository.DatabaseTable;
@@ -6,6 +6,7 @@ import edu.uark.dataaccess.repository.helpers.PostgreFunctionType;
 import edu.uark.dataaccess.repository.helpers.SQLComparisonType;
 import edu.uark.dataaccess.repository.helpers.where.WhereClause;
 import edu.uark.dataaccess.repository.helpers.where.WhereContainer;
+import edu.uark.models.api.Employee;
 import edu.uark.models.entities.EmployeeEntity;
 import edu.uark.models.entities.fieldnames.EmployeeFieldNames;
 import edu.uark.models.repositories.interfaces.EmployeeRepositoryInterface;
@@ -20,7 +21,7 @@ public class EmployeeRepository extends BaseRepository<EmployeeEntity> implement
 				(new WhereClause()).
 					postgreFunction(PostgreFunctionType.LOWER).
 					table(this.primaryTable).
-					fieldName(EmployeeFieldNames.LOOKUP_CODE).
+					fieldName(EmployeeFieldNames.REC_ID).
 					comparison(SQLComparisonType.EQUALS)
 			),
 			(ps) -> {
@@ -39,7 +40,6 @@ public class EmployeeRepository extends BaseRepository<EmployeeEntity> implement
 	}
 
 	public EmployeeRepository() {
-		super(DatabaseTable.Employee);
+		super(DatabaseTable.EMPLOYEE);
 	}
 }
-*/ //Commenting out until there is a working interface
