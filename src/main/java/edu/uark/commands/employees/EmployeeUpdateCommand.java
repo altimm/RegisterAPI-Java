@@ -19,9 +19,9 @@ public class EmployeeUpdateCommand implements ResultCommandInterface<Employee> {
 			throw new UnprocessableEntityException("lookupcode");
 		}
 
-		EmployeeEntity employeeEntity = this.employeeRepository.get(this.productId);
+		EmployeeEntity employeeEntity = this.employeeRepository.get(this.employeeId);
 		if (employeeEntity == null) { //No record with the associated record ID exists in the database.
-			throw new NotFoundException("Product");
+			throw new NotFoundException("Employee");
 		}
 		
 		this.apiEmployee = employeeEntity.synchronize(this.apiEmployee); //Synchronize any incoming changes for UPDATE to the database.
@@ -32,12 +32,12 @@ public class EmployeeUpdateCommand implements ResultCommandInterface<Employee> {
 	}
 
 	//Properties
-	private UUID productId;
+	private UUID employeeId;
 	public UUID getEmployeeId() {
-		return this.productId;
+		return this.employeeId;
 	}
-	public EmployeeUpdateCommand setEmployeeId(UUID productId) {
-		this.productId = productId;
+	public EmployeeUpdateCommand setEmployeeId(UUID employeeId) {
+		this.employeeId = employeeId;
 		return this;
 	}
 	

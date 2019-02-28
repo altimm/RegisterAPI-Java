@@ -4,7 +4,6 @@ import edu.uark.commands.ResultCommandInterface;
 import edu.uark.controllers.exceptions.NotFoundException;
 import edu.uark.controllers.exceptions.UnprocessableEntityException;
 import edu.uark.models.api.Employee;
-import edu.uark.models.api.Product;
 import edu.uark.models.entities.EmployeeEntity;
 import edu.uark.models.repositories.EmployeeRepository;
 import edu.uark.models.repositories.interfaces.EmployeeRepositoryInterface;

@@ -11,7 +11,7 @@ import java.util.UUID;
 public class EmployeeDeleteCommand implements VoidCommandInterface {
 	@Override
 	public void execute() {
-		EmployeeEntity employeeEntity = this.employeeRepository.get(this.productId);
+		EmployeeEntity employeeEntity = this.employeeRepository.get(this.employeeId);
 		if (employeeEntity == null) { //No record with the associated record ID exists in the database.
 			throw new NotFoundException("Employee");
 		}
@@ -20,12 +20,12 @@ public class EmployeeDeleteCommand implements VoidCommandInterface {
 	}
 
 	//Properties
-	private UUID productId;
-	public UUID getProductId() {
-		return this.productId;
+	private UUID employeeId;
+	public UUID getEmployeeId() {
+		return this.employeeId;
 	}
-	public EmployeeDeleteCommand setProductId(UUID productId) {
-		this.productId = productId;
+	public EmployeeDeleteCommand setEmployeeId(UUID employeeId) {
+		this.employeeId = employeeId;
 		return this;
 	}
 	
