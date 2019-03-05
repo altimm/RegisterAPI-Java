@@ -21,7 +21,7 @@ public class EmployeeRepository extends BaseRepository<EmployeeEntity> implement
 				(new WhereClause()).
 					postgreFunction(PostgreFunctionType.LOWER).
 					table(this.primaryTable).
-					fieldName(EmployeeFieldNames.EMP_ID).
+					fieldName(EmployeeFieldNames.REC_ID).
 					comparison(SQLComparisonType.EQUALS)
 			),
 			(ps) -> {

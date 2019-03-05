@@ -15,11 +15,11 @@ public class EmployeeUpdateCommand implements ResultCommandInterface<Employee> {
 	@Override
 	public Employee execute() {
 		//Validations
-		if (StringUtils.isBlank(this.apiEmployee.getRecord_ID())) {
-			throw new UnprocessableEntityException("lookupcode");
+		if (StringUtils.isBlank(this.apiEmployee.getEmpID())) {
+			throw new UnprocessableEntityException("employee ID");
 		}
 
-		EmployeeEntity employeeEntity = this.employeeRepository.get(this.employeeId);
+		EmployeeEntity employeeEntity = this.employeeRepository.get(this.productId);
 		if (employeeEntity == null) { //No record with the associated record ID exists in the database.
 			throw new NotFoundException("Employee");
 		}
@@ -32,12 +32,12 @@ public class EmployeeUpdateCommand implements ResultCommandInterface<Employee> {
 	}
 
 	//Properties
-	private UUID employeeId;
+	private UUID productId;
 	public UUID getEmployeeId() {
-		return this.employeeId;
+		return this.productId;
 	}
-	public EmployeeUpdateCommand setEmployeeId(UUID employeeId) {
-		this.employeeId = employeeId;
+	public EmployeeUpdateCommand setEmployeeId(UUID productId) {
+		this.productId = productId;
 		return this;
 	}
 	

@@ -8,14 +8,14 @@ import java.util.UUID;
 public class Employee {
 
 	//record ID
-	private String record_id;
+	private UUID record_id;
 
-	public String getRecord_ID()
+	public UUID getRecord_ID()
 	{
 		return this.record_id;
 	}
 
-	public Employee setRecord_ID(String record_id) {
+	public Employee setRecord_ID(UUID record_id) {
 		this.record_id = record_id;
 		return this;
 	}
@@ -88,7 +88,7 @@ public class Employee {
 	}
 
 	public Employee() {
-		this.record_id = "temp Record_ID";
+		this.record_id = new UUID(0, 0);
 		this.first_name = "temp first-Name";
 		this.last_name = "temp-last-Name";
 		this.emp_ID = "temp Emp_Id";

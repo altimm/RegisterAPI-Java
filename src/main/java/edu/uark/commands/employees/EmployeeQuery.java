@@ -12,7 +12,7 @@ import java.util.UUID;
 public class EmployeeQuery implements ResultCommandInterface<Employee> {
 	@Override
 	public Employee execute() {
-		EmployeeEntity employeeEntity = this.employeeRepository.get(this.employeeId);
+		EmployeeEntity employeeEntity = this.employeeRepository.get(this.productId);
 		if (employeeEntity != null) {
 			return new Employee(employeeEntity);
 		} else {
@@ -21,14 +21,14 @@ public class EmployeeQuery implements ResultCommandInterface<Employee> {
 	}
 
 	//Properties
-	private UUID employeeId;
+	private UUID productId;
 
 	public UUID getEmployeeId() {
-		return this.employeeId;
+		return this.productId;
 	}
-	public EmployeeQuery setEmployeeId(UUID employeeId)
+	public EmployeeQuery setEmployeeId(UUID productId)
 	{
-		this.employeeId = employeeId;
+		this.productId = productId;
 		return this;
 	}
 	

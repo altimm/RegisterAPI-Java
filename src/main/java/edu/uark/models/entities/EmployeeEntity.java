@@ -10,6 +10,7 @@ import edu.uark.dataaccess.entities.BaseEntity;
 import edu.uark.dataaccess.repository.DatabaseTable;
 import edu.uark.models.api.Employee;
 import edu.uark.models.entities.fieldnames.EmployeeFieldNames;
+import java.util.UUID;
 
 //connects from fieldnames
 public class EmployeeEntity extends BaseEntity<EmployeeEntity> {
@@ -17,7 +18,7 @@ public class EmployeeEntity extends BaseEntity<EmployeeEntity> {
 
 	protected void fillFromRecord(ResultSet rs) throws SQLException
 	{
-		this.record_ID = rs.getString(EmployeeFieldNames.REC_ID);
+		//this.record_ID = rs.getString(EmployeeFieldNames.REC_ID);
 		this.first_Name = rs.getString(EmployeeFieldNames.F_NAME);
 		this.last_Name = rs.getString(EmployeeFieldNames.L_NAME);
 		this.emp_ID = rs.getString(EmployeeFieldNames.EMP_ID);
@@ -28,7 +29,7 @@ public class EmployeeEntity extends BaseEntity<EmployeeEntity> {
 	@Override
 	protected Map<String, Object> fillRecord(Map<String, Object> record)
 	{
-		record.put(EmployeeFieldNames.REC_ID, this.record_ID);
+		// record.put(EmployeeFieldNames.REC_ID, this.record_ID);
 		record.put(EmployeeFieldNames.F_NAME, this.first_Name);
 		record.put(EmployeeFieldNames.L_NAME, this.last_Name);
 		record.put(EmployeeFieldNames.EMP_ID, this.emp_ID);
@@ -45,25 +46,25 @@ public class EmployeeEntity extends BaseEntity<EmployeeEntity> {
 	//string
 
 	//declare
-	private String record_ID;
+	private UUID record_ID;
 
 	//get: method
-	public String getRecord_ID()
+	public UUID getRecord_ID()
 	{
 		return this.record_ID;
 	}
 
 	//set: method
-	public EmployeeEntity setRecord_ID(String record_ID)
-	{
-		if (!StringUtils.equals(this.record_ID, record_ID))
-		{
-			this.record_ID = record_ID;
-			this.propertyChanged(EmployeeFieldNames.REC_ID);
-		}
-
-		return this;
-	}
+//	public EmployeeEntity setRecord_ID(UUID record_ID)
+//	{
+//		if (!StringUtils.equals(this.record_ID, record_ID))
+//		{
+//			this.record_ID = record_ID;
+//			this.propertyChanged(EmployeeFieldNames.REC_ID);
+//		}
+//
+//		return this;
+//	}
 
 	//~~~
 	//First name
@@ -197,7 +198,7 @@ public class EmployeeEntity extends BaseEntity<EmployeeEntity> {
 	public Employee synchronize(Employee apiEmployee)
 	{
 
-		this.setRecord_ID(apiEmployee.getRecord_ID());
+		//this.setRecord_ID(apiEmployee.getRecord_ID());
 
 		this.setFirstName(apiEmployee.getFirstName());
 		this.setLastName(apiEmployee.getLastName());
@@ -217,7 +218,7 @@ public class EmployeeEntity extends BaseEntity<EmployeeEntity> {
 		super(DatabaseTable.EMPLOYEE);
 
 		//default content
-		this.record_ID =  StringUtils.EMPTY;
+		//this.record_ID =  StringUtils.EMPTY;
 		this.first_Name =  StringUtils.EMPTY;
 		this.last_Name =  StringUtils.EMPTY;
 		this.emp_ID =  StringUtils.EMPTY;
@@ -229,7 +230,7 @@ public class EmployeeEntity extends BaseEntity<EmployeeEntity> {
 	{
 		super(DatabaseTable.EMPLOYEE);
 
-		this.record_ID = apiEmployee.getRecord_ID();
+		//this.record_ID = apiEmployee.getRecord_ID();
 		this.first_Name = apiEmployee.getFirstName();
 		this.last_Name = apiEmployee.getLastName();
 		this.emp_ID = apiEmployee.getEmpID();

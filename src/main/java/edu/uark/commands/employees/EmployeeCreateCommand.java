@@ -13,13 +13,13 @@ public class EmployeeCreateCommand implements ResultCommandInterface<Employee> {
 	@Override
 	public Employee execute() {
 		//Validations
-		if (StringUtils.isBlank(this.apiEmployee.getRecord_ID())) {
+		if (StringUtils.isBlank(this.apiEmployee.getEmpID())) {
 			throw new UnprocessableEntityException("lookupcode");
 		}
 
-		EmployeeEntity employeeEntity = this.employeeRepository.byLookupCode(this.apiEmployee.getRecord_ID());
+		EmployeeEntity employeeEntity = this.employeeRepository.byLookupCode(this.apiEmployee.getEmpID());
 		if (employeeEntity != null) {
-			throw new ConflictException("Record ID"); //Lookupcode already defined for another employee.
+			throw new ConflictException("Record ID"); //Lookupcode already defined for another product.
 		}
 		
 		//No ENTITY object was returned from the database, thus the API object's lookupcode must be unique.
