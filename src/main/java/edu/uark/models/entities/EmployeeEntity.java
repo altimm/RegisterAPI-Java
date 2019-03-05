@@ -46,13 +46,13 @@ public class EmployeeEntity extends BaseEntity<EmployeeEntity> {
 	//string
 
 	//declare
-	private UUID record_ID;
+	//private UUID record_ID;
 
 	//get: method
-	public UUID getRecord_ID()
-	{
-		return this.record_ID;
-	}
+	//public UUID getRecord_ID()
+//	{
+//		return this.record_ID;
+//	}
 
 	//set: method
 //	public EmployeeEntity setRecord_ID(UUID record_ID)
