@@ -202,12 +202,12 @@ public class EmployeeEntity extends BaseEntity<EmployeeEntity> {
 
 		this.setFirstName(apiEmployee.getFirstName());
 		this.setLastName(apiEmployee.getLastName());
-		this.setEmpID(apiEmployee.getLastName());
+		//this.setEmpID(apiEmployee.getLastName());
 		this.setEmpID(apiEmployee.getEmpID());
 		this.setBool(apiEmployee.getBool());
 		this.setRole(apiEmployee.getRole());
 
-
+		apiEmployee.setId(this.getId());
 		apiEmployee.setCreatedOn(this.getCreatedOn());
 
 		return apiEmployee;

@@ -43,7 +43,6 @@ public class Employee {
 		return this;
 	}
 
-	//is used for lookupCode
 	//employee id
 	private String emp_ID;
 
@@ -94,7 +93,7 @@ public class Employee {
 		this.last_name = "temp-last-Name";
 		this.emp_ID = "temp Emp_Id";
 		this.active_bool = "temp true-bool";
-		this.role = -1;
+		this.role = 0;
 
 		this.createdOn = LocalDateTime.now();
 	}

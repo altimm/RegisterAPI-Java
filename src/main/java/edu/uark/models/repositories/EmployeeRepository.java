@@ -15,7 +15,7 @@ import java.sql.SQLException;
 
 public class EmployeeRepository extends BaseRepository<EmployeeEntity> implements EmployeeRepositoryInterface {
 	@Override
-	public EmployeeEntity byEmpId(String lookupCode) {
+	public EmployeeEntity byEmployeeId(String lookupCode) {
 		return this.firstOrDefaultWhere(
 			new WhereContainer(
 				(new WhereClause()).
