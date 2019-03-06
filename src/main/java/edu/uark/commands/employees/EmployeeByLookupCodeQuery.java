@@ -17,7 +17,7 @@ public class EmployeeByLookupCodeQuery implements ResultCommandInterface<Employe
 			throw new UnprocessableEntityException("lookupcode");
 		}
 		
-		EmployeeEntity employeeEntity = this.employeeRepository.byLookupCode(this.lookupCode);
+		EmployeeEntity employeeEntity = this.employeeRepository.byEmpId(this.lookupCode);
 		if (employeeEntity != null) {
 			return new Employee(employeeEntity);
 		} else {
@@ -27,10 +27,10 @@ public class EmployeeByLookupCodeQuery implements ResultCommandInterface<Employe
 
 	//Properties
 	private String lookupCode;
-	public String getLookupCode() {
+	public String getEmpId() {
 		return this.lookupCode;
 	}
-	public EmployeeByLookupCodeQuery setLookupCode(String lookupCode) {
+	public EmployeeByLookupCodeQuery setEmpId(String lookupCode) {
 		this.lookupCode = lookupCode;
 		return this;
 	}

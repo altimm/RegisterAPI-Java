@@ -14,10 +14,10 @@ public class EmployeeCreateCommand implements ResultCommandInterface<Employee> {
 	public Employee execute() {
 		//Validations
 		if (StringUtils.isBlank(this.apiEmployee.getEmpID())) {
-			throw new UnprocessableEntityException("lookupcode");
+			throw new UnprocessableEntityException("empId");
 		}
 
-		EmployeeEntity employeeEntity = this.employeeRepository.byLookupCode(this.apiEmployee.getEmpID());
+		EmployeeEntity employeeEntity = this.employeeRepository.byEmpId(this.apiEmployee.getEmpID());
 		if (employeeEntity != null) {
 			throw new ConflictException("Employee ID"); //Lookupcode already defined for another product.
 		}

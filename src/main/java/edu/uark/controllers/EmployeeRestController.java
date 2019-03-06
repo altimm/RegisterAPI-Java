@@ -26,7 +26,7 @@ public class EmployeeRestController {
 	@RequestMapping(value = "/byrecordID/{employeeRecordID}", method = RequestMethod.GET)
 	public Employee getEmployeeByLookupCode(@PathVariable String productLookupCode) {
 		return (new EmployeeByLookupCodeQuery()).
-			setLookupCode(productLookupCode).
+			setEmpId(productLookupCode).
 			execute();
 	}
 	
@@ -38,7 +38,7 @@ public class EmployeeRestController {
 	}
 	
 	@RequestMapping(value = "/{employeeId}", method = RequestMethod.PUT)
-	public Employee update(@PathVariable UUID productId, @RequestBody Employee product) {
+	public Employee updateEmployee(@PathVariable UUID productId, @RequestBody Employee product) {
 		return (new EmployeeUpdateCommand()).
 			setEmployeeId(productId).
 			setApiEmployee(product).
