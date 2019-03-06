@@ -19,7 +19,7 @@ public class EmployeeCreateCommand implements ResultCommandInterface<Employee> {
 
 		EmployeeEntity employeeEntity = this.employeeRepository.byLookupCode(this.apiEmployee.getEmpID());
 		if (employeeEntity != null) {
-			throw new ConflictException("Record ID"); //Lookupcode already defined for another product.
+			throw new ConflictException("Employee ID"); //Lookupcode already defined for another product.
 		}
 		
 		//No ENTITY object was returned from the database, thus the API object's lookupcode must be unique.
