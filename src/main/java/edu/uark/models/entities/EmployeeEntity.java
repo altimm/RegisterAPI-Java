@@ -41,34 +41,7 @@ public class EmployeeEntity extends BaseEntity<EmployeeEntity> {
 		return record;
 	}
 
-	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	//Data type get, set methods.
 
-	//Record ID
-	//string
-
-	//declare
-	//private UUID record_ID;
-
-	//get: method
-	//public UUID getRecord_ID()
-//	{
-//		return this.record_ID;
-//	}
-
-	//set: method
-//	public EmployeeEntity setRecord_ID(UUID record_ID)
-//	{
-//		if (!StringUtils.equals(this.record_ID, record_ID))
-//		{
-//			this.record_ID = record_ID;
-//			this.propertyChanged(EmployeeFieldNames.REC_ID);
-//		}
-//
-//		return this;
-//	}
-
-	//~~~
 	//First name
 	//string
 
@@ -233,6 +206,7 @@ public class EmployeeEntity extends BaseEntity<EmployeeEntity> {
 		this.setRole(apiEmployee.getRole());
 
 		apiEmployee.setId(this.getId());
+		apiEmployee.setPass(this.getPass());
 		apiEmployee.setCreatedOn(this.getCreatedOn());
 
 		return apiEmployee;
@@ -249,6 +223,7 @@ public class EmployeeEntity extends BaseEntity<EmployeeEntity> {
 		this.emp_ID =  StringUtils.EMPTY;
 		this.active_bool =  StringUtils.EMPTY;
 		this.role = -1;
+		this.pass = StringUtils.EMPTY;
 	}
 
 	public EmployeeEntity(Employee apiEmployee)
@@ -261,6 +236,7 @@ public class EmployeeEntity extends BaseEntity<EmployeeEntity> {
 		this.emp_ID = apiEmployee.getEmpID();
 		this.active_bool = apiEmployee.getBool();
 		this.role = apiEmployee.getRole();
+		this.pass = apiEmployee.getPass();
 
 	}
 
