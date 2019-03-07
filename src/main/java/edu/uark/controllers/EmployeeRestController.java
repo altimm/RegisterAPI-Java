@@ -17,38 +17,38 @@ public class EmployeeRestController {
 	}
 
 	@RequestMapping(value = "/{recordId}", method = RequestMethod.GET)
-	public Employee getEmployee(@PathVariable UUID productId) {
+	public Employee getEmployee(@PathVariable UUID employeeId) {
 		return (new EmployeeQuery()).
-			setEmployeeId(productId).
+			setEmployeeId(employeeId).
 			execute();
 	}
 
 	@RequestMapping(value = "/byrecordID/{employeeRecordID}", method = RequestMethod.GET)
-	public Employee getEmployeeByEmpId(@PathVariable String productLookupCode) {
+	public Employee getEmployeeByEmpId(@PathVariable String employeeLookupCode) {
 		return (new EmployeeByLookupCodeQuery()).
-			setEmployeeId(productLookupCode).
+			setEmployeeId(employeeLookupCode).
 			execute();
 	}
 	
 	@RequestMapping(value = "/", method = RequestMethod.POST)
-	public Employee createEmployee(@RequestBody Employee product) {
+	public Employee createEmployee(@RequestBody Employee employee) {
 		return (new EmployeeCreateCommand()).
-			setApiEmployee(product).
+			setApiEmployee(employee).
 			execute();
 	}
 	
 	@RequestMapping(value = "/{employeeId}", method = RequestMethod.PUT)
-	public Employee updateEmployee(@PathVariable UUID productId, @RequestBody Employee product) {
+	public Employee updateEmployee(@PathVariable UUID employeeId, @RequestBody Employee employee) {
 		return (new EmployeeUpdateCommand()).
-			setEmployeeId(productId).
-			setApiEmployee(product).
+			setEmployeeId(employeeId).
+			setApiEmployee(employee).
 			execute();
 	}
 	
 	@RequestMapping(value = "/{employeeId}", method = RequestMethod.DELETE)
-	public void deleteEmployee(@PathVariable UUID productId) {
+	public void deleteEmployee(@PathVariable UUID employeeId) {
 		(new EmployeeDeleteCommand()).
-			setEmployeeId(productId).
+			setEmployeeId(employeeId).
 			execute();
 	}
 
