@@ -11,7 +11,7 @@ import java.util.UUID;
 @RequestMapping(value = "/api/employee")
 public class EmployeeRestController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public List<Employee> getEmployee()
+	public List<Employee> getEmployees()
 	{
 		return (new EmployeesQuery()).execute();
 	}
@@ -38,7 +38,7 @@ public class EmployeeRestController {
 	}
 	
 	@RequestMapping(value = "/{employeeId}", method = RequestMethod.PUT)
-	public Employee update(@PathVariable UUID productId, @RequestBody Employee product) {
+	public Employee updateEmployee(@PathVariable UUID productId, @RequestBody Employee product) {
 		return (new EmployeeUpdateCommand()).
 			setEmployeeId(productId).
 			setApiEmployee(product).
