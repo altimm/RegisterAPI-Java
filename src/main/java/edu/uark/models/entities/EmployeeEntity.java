@@ -25,6 +25,7 @@ public class EmployeeEntity extends BaseEntity<EmployeeEntity> {
 		this.active_bool = rs.getString(EmployeeFieldNames.ACT_BOOL);
 		this.role = rs.getInt(EmployeeFieldNames.ROLE);
 		this.pass = rs.getString(EmployeeFieldNames.PASS);
+		this.mng = rs.getString((EmployeeFieldNames.MNG));
 	}
 
 	@Override
@@ -37,6 +38,7 @@ public class EmployeeEntity extends BaseEntity<EmployeeEntity> {
 		record.put(EmployeeFieldNames.ACT_BOOL, this.active_bool);
 		record.put(EmployeeFieldNames.ROLE, this.role);
 		record.put(EmployeeFieldNames.PASS, this.pass);
+		record.put(EmployeeFieldNames.MNG, this.mng);
 
 		return record;
 	}
