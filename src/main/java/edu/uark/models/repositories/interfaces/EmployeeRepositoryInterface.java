@@ -5,5 +5,5 @@ import edu.uark.models.entities.EmployeeEntity;
 
 public interface EmployeeRepositoryInterface extends BaseRepositoryInterface<EmployeeEntity>
 {
-	EmployeeEntity byEmployeeId(String lookupCode);
+	EmployeeEntity byEmpId(String lookupCode);
 }

@@ -17,7 +17,7 @@ public class EmployeeByLookupCodeQuery implements ResultCommandInterface<Employe
 			throw new UnprocessableEntityException("lookupcode");
 		}
 		
-		EmployeeEntity employeeEntity = this.employeeRepository.byEmployeeId(this.lookupCode);
+		EmployeeEntity employeeEntity = this.employeeRepository.byEmpId(this.lookupCode);
 		if (employeeEntity != null) {
 			return new Employee(employeeEntity);
 		} else {

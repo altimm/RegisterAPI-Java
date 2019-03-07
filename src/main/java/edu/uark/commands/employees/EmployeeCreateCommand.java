@@ -17,7 +17,7 @@ public class EmployeeCreateCommand implements ResultCommandInterface<Employee> {
 			throw new UnprocessableEntityException("lookupcode");
 		}
 
-		EmployeeEntity employeeEntity = this.employeeRepository.byEmployeeId(this.apiEmployee.getEmpID());
+		EmployeeEntity employeeEntity = this.employeeRepository.byEmpId(this.apiEmployee.getEmpID());
 		if (employeeEntity != null) {
 			throw new ConflictException("Employee ID"); //Lookupcode already defined for another product.
 		}
