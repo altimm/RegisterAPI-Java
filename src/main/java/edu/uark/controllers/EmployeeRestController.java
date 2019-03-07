@@ -24,7 +24,7 @@ public class EmployeeRestController {
 	}
 
 	@RequestMapping(value = "/byrecordID/{employeeRecordID}", method = RequestMethod.GET)
-	public Employee getEmployeeByLookupCode(@PathVariable String productLookupCode) {
+	public Employee getEmployeeById(@PathVariable String productLookupCode) {
 		return (new EmployeeByLookupCodeQuery()).
 			setEmployeeId(productLookupCode).
 			execute();
