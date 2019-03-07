@@ -55,12 +55,12 @@ public class Employee {
 	}
 
 	//bool
-	private String active_bool;
+	private boolean active_bool;
 
-	public String getBool() {
+	public boolean getBool() {
 		return this.active_bool;
 	}
-	public Employee setBool(String active_bool) {
+	public Employee setBool(boolean active_bool) {
 		this.active_bool = active_bool;
 		return this;
 	}
@@ -114,8 +114,8 @@ public class Employee {
 		this.record_id = new UUID(0, 0);
 		this.first_name = "temp first-Name";
 		this.last_name = "temp-last-Name";
-		this.emp_ID = "temp Emp_Id";
-		this.active_bool = "temp true-bool";
+		this.emp_ID = "-1";
+		this.active_bool = true;
 		this.role = 0;
 		this.pass = "temp pass";
 		this.mng = "temp-mng";

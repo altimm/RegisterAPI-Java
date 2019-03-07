@@ -4,6 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Map;
 
+import org.apache.commons.lang3.BooleanUtils;
 import org.apache.commons.lang3.StringUtils;
 
 import edu.uark.dataaccess.entities.BaseEntity;
@@ -11,6 +12,8 @@ import edu.uark.dataaccess.repository.DatabaseTable;
 import edu.uark.models.api.Employee;
 import edu.uark.models.entities.fieldnames.EmployeeFieldNames;
 import java.util.UUID;
+import java.util.Random;
+
 
 //connects from fieldnames
 public class EmployeeEntity extends BaseEntity<EmployeeEntity> {
@@ -21,8 +24,8 @@ public class EmployeeEntity extends BaseEntity<EmployeeEntity> {
 		//this.record_ID = rs.getString(EmployeeFieldNames.REC_ID);
 		this.first_Name = rs.getString(EmployeeFieldNames.F_NAME);
 		this.last_Name = rs.getString(EmployeeFieldNames.L_NAME);
-		this.emp_ID = rs.getString(EmployeeFieldNames.EMP_ID);
-		this.active_bool = rs.getString(EmployeeFieldNames.ACT_BOOL);
+		this.emp_ID = rs.getInt(EmployeeFieldNames.EMP_ID);
+		this.active_bool = rs.getBoolean(EmployeeFieldNames.ACT_BOOL);
 		this.role = rs.getInt(EmployeeFieldNames.ROLE);
 		this.pass = rs.getString(EmployeeFieldNames.PASS);
 		this.mng = rs.getString((EmployeeFieldNames.MNG));
@@ -110,10 +113,13 @@ public class EmployeeEntity extends BaseEntity<EmployeeEntity> {
 	//set:
 	public EmployeeEntity setEmpID(String emp_ID)
 	{
+//		Random rand = new Random();
+
 		if (this.emp_ID != emp_ID)
-		{
-			this.emp_ID = emp_ID;
-			this.propertyChanged(EmployeeFieldNames.EMP_ID);
+		{ //FIX HERE
+//			this.emp_ID = Integer.parseInt(emp_ID); //generated number between 0-10
+//			this.emp_ID =
+//			this.propertyChanged(EmployeeFieldNames.EMP_ID);
 		}
 
 		return this;
@@ -124,16 +130,16 @@ public class EmployeeEntity extends BaseEntity<EmployeeEntity> {
 	//string
 
 	//declaration
-	private String active_bool;
+	private boolean active_bool;
 
 	//get: method
-	public String getBool()
+	public boolean getBool()
 	{
 		return this.active_bool;
 	}
 
 	//set:
-	public EmployeeEntity setBool(String active_bool)
+	public EmployeeEntity setBool(boolean active_bool)
 	{
 		if (this.active_bool != active_bool)
 		{
@@ -250,8 +256,8 @@ public class EmployeeEntity extends BaseEntity<EmployeeEntity> {
 		//this.record_ID =  StringUtils.EMPTY;
 		this.first_Name =  StringUtils.EMPTY;
 		this.last_Name =  StringUtils.EMPTY;
-		this.emp_ID =  StringUtils.EMPTY;
-		this.active_bool =  StringUtils.EMPTY;
+		this.emp_ID =  -1;
+		this.active_bool =  true;
 		this.role = -1;
 		this.pass = StringUtils.EMPTY;
 		this.mng = StringUtils.EMPTY;
