@@ -192,6 +192,31 @@ public class EmployeeEntity extends BaseEntity<EmployeeEntity> {
 		return this;
 	}
 
+	//~~~~~~~~~~~~~~~~~~~~~~~~
+	//Mng
+	//string
+
+	//declaration
+	private String mng;
+
+	//get: method
+	public String getMng()
+	{
+		return this.mng;
+	}
+
+	//set:
+	public EmployeeEntity setMng(String mng)
+	{
+		if (this.mng != mng)
+		{
+			this.mng = mng;
+			this.propertyChanged(EmployeeFieldNames.MNG);
+		}
+
+		return this;
+	}
+
 	//syncronize method
 	public Employee synchronize(Employee apiEmployee)
 	{
@@ -207,6 +232,7 @@ public class EmployeeEntity extends BaseEntity<EmployeeEntity> {
 		this.setPass(apiEmployee.getPass());
 
 		apiEmployee.setId(this.getId());
+		apiEmployee.setMng(this.getMng());
 		//apiEmployee.setPass(this.getPass());
 		apiEmployee.setCreatedOn(this.getCreatedOn());
 
@@ -225,6 +251,7 @@ public class EmployeeEntity extends BaseEntity<EmployeeEntity> {
 		this.active_bool =  StringUtils.EMPTY;
 		this.role = -1;
 		this.pass = StringUtils.EMPTY;
+		this.mng = StringUtils.EMPTY;
 	}
 
 	public EmployeeEntity(Employee apiEmployee)
@@ -238,6 +265,7 @@ public class EmployeeEntity extends BaseEntity<EmployeeEntity> {
 		this.active_bool = apiEmployee.getBool();
 		this.role = apiEmployee.getRole();
 		this.pass = apiEmployee.getPass();
+		this.mng = apiEmployee.getMng();
 
 	}
 

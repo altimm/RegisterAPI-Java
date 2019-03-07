@@ -76,7 +76,7 @@ public class Employee {
 		return this;
 	}
 
-	//role
+	//password
 	private String pass;
 
 	public String getPass() {
@@ -84,6 +84,17 @@ public class Employee {
 	}
 	public Employee setPass(String pass) {
 		this.pass = pass;
+		return this;
+	}
+
+	//manager
+	private String mng;
+
+	public String getMng() {
+		return this.mng;
+	}
+	public Employee setMng(String mng) {
+		this.mng = mng;
 		return this;
 	}
 
@@ -107,6 +118,7 @@ public class Employee {
 		this.active_bool = "temp true-bool";
 		this.role = 0;
 		this.pass = "temp pass";
+		this.mng = "temp-mng";
 
 		this.createdOn = LocalDateTime.now();
 	}
@@ -120,6 +132,7 @@ public class Employee {
 		this.active_bool = employeeEntity.getBool();
 		this.role = employeeEntity.getRole();
 		this.pass = employeeEntity.getPass();
+		this.mng = employeeEntity.getMng();
 
 
 		this.createdOn = employeeEntity.getCreatedOn();

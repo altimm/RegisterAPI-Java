@@ -27,9 +27,7 @@ public class EmployeeByLookupCodeQuery implements ResultCommandInterface<Employe
 
 	//Properties
 	private String lookupCode;
-	public String getEmployeeId() {
-		return this.lookupCode;
-	}
+	public String getEmployeeId() { return this.lookupCode; }
 	public EmployeeByLookupCodeQuery setEmployeeId(String lookupCode) {
 		this.lookupCode = lookupCode;
 		return this;
