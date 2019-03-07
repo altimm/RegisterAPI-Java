@@ -24,7 +24,7 @@ public class EmployeeEntity extends BaseEntity<EmployeeEntity> {
 		//this.record_ID = rs.getString(EmployeeFieldNames.REC_ID);
 		this.first_Name = rs.getString(EmployeeFieldNames.F_NAME);
 		this.last_Name = rs.getString(EmployeeFieldNames.L_NAME);
-		this.emp_ID = rs.getInt(EmployeeFieldNames.EMP_ID);
+		this.emp_ID = rs.getString(EmployeeFieldNames.EMP_ID);
 		this.active_bool = rs.getBoolean(EmployeeFieldNames.ACT_BOOL);
 		this.role = rs.getInt(EmployeeFieldNames.ROLE);
 		this.pass = rs.getString(EmployeeFieldNames.PASS);
@@ -113,13 +113,16 @@ public class EmployeeEntity extends BaseEntity<EmployeeEntity> {
 	//set:
 	public EmployeeEntity setEmpID(String emp_ID)
 	{
-//		Random rand = new Random();
+		Random rand = new Random();
+		//int temp;
 
 		if (this.emp_ID != emp_ID)
-		{ //FIX HERE
-//			this.emp_ID = Integer.parseInt(emp_ID); //generated number between 0-10
-//			this.emp_ID =
-//			this.propertyChanged(EmployeeFieldNames.EMP_ID);
+		{
+
+			int temp = Integer.parseInt(emp_ID); //change string to int
+			temp =  rand.nextInt(50);//random gen an int
+			this.emp_ID = String.valueOf(temp);//change back to string
+			this.propertyChanged(EmployeeFieldNames.EMP_ID);
 		}
 
 		return this;
@@ -256,7 +259,7 @@ public class EmployeeEntity extends BaseEntity<EmployeeEntity> {
 		//this.record_ID =  StringUtils.EMPTY;
 		this.first_Name =  StringUtils.EMPTY;
 		this.last_Name =  StringUtils.EMPTY;
-		this.emp_ID =  -1;
+		this.emp_ID =  "-1";
 		this.active_bool =  true;
 		this.role = -1;
 		this.pass = StringUtils.EMPTY;

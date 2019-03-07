@@ -30,8 +30,10 @@ public class ProductEntity extends BaseEntity<ProductEntity> {
 	public String getLookupCode() {
 		return this.lookupCode;
 	}
-	public ProductEntity setLookupCode(String lookupCode) {
-		if (!StringUtils.equals(this.lookupCode, lookupCode)) {
+	public ProductEntity setLookupCode(String lookupCode)
+	{
+		if (!StringUtils.equals(this.lookupCode, lookupCode))
+		{
 			this.lookupCode = lookupCode;
 			this.propertyChanged(ProductFieldNames.LOOKUP_CODE);
 		}
