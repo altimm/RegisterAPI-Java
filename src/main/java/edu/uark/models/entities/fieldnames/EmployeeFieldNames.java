@@ -9,5 +9,8 @@ public class EmployeeFieldNames extends BaseFieldNames {
 	public static final String EMP_ID = "emp_ID";
 	public static final String ACT_BOOL = "active_bool";
 	public static final String ROLE = "role";
+	public static final String PASS = "pass";
+
+
 
 }

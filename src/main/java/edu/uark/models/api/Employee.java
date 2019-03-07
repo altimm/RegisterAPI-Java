@@ -76,6 +76,18 @@ public class Employee {
 		return this;
 	}
 
+	//role
+	private int pass;
+
+	public int getPass() {
+		return this.pass;
+	}
+	public Employee setPass(int pass) {
+		this.pass = pass;
+		return this;
+	}
+
+
 
 	//do not touch
 	private LocalDateTime createdOn;

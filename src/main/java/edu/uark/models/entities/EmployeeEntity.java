@@ -24,6 +24,7 @@ public class EmployeeEntity extends BaseEntity<EmployeeEntity> {
 		this.emp_ID = rs.getString(EmployeeFieldNames.EMP_ID);
 		this.active_bool = rs.getString(EmployeeFieldNames.ACT_BOOL);
 		this.role = rs.getInt(EmployeeFieldNames.ROLE);
+		this.pass = rs.getString(EmployeeFieldNames.PASS);
 	}
 
 	@Override
@@ -35,6 +36,7 @@ public class EmployeeEntity extends BaseEntity<EmployeeEntity> {
 		record.put(EmployeeFieldNames.EMP_ID, this.emp_ID);
 		record.put(EmployeeFieldNames.ACT_BOOL, this.active_bool);
 		record.put(EmployeeFieldNames.ROLE, this.role);
+		record.put(EmployeeFieldNames.PASS, this.pass);
 
 		return record;
 	}
@@ -193,6 +195,29 @@ public class EmployeeEntity extends BaseEntity<EmployeeEntity> {
 	}
 
 	//~~~~~~~~~~~~~~~~~~~~~~~~
+	//Pass
+	//string
+
+	//declaration
+	private String pass;
+
+	//get: method
+	public String getPass()
+	{
+		return this.pass;
+	}
+
+	//set:
+	public EmployeeEntity setPass(String pass)
+	{
+		if (this.pass != pass)
+		{
+			this.pass = pass;
+			this.propertyChanged(EmployeeFieldNames.PASS);
+		}
+
+		return this;
+	}
 
 	//syncronize method
 	public Employee synchronize(Employee apiEmployee)
