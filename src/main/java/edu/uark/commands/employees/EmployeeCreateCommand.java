@@ -39,7 +39,7 @@ public class EmployeeCreateCommand implements ResultCommandInterface<Employee> {
 		employeeEntity.setRole(1);
 		employeeEntity.setMng("");
 		employeeEntity.setBool(true);
-		employeeEntity.setEmpID(1);
+		employeeEntity.setEmpID("1");
 
 
 		employeeEntity.save(); //Write, via an INSERT, the new record to the database.
