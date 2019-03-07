@@ -105,10 +105,7 @@ public class EmployeeEntity extends BaseEntity<EmployeeEntity> {
 	private String emp_ID;
 
 	//get: method
-	public String getEmpID()
-	{
-		return this.emp_ID;
-	}
+	public String getEmpID() { return this.emp_ID; }
 
 	//set:
 	public EmployeeEntity setEmpID(String emp_ID)
@@ -116,13 +113,16 @@ public class EmployeeEntity extends BaseEntity<EmployeeEntity> {
 		Random rand = new Random();
 		//int temp;
 
-		if (this.emp_ID != emp_ID)
+		if (!StringUtils.equals(this.emp_ID, emp_ID))
 		{
 
-			int temp = Integer.parseInt(emp_ID); //change string to int
-			temp =  rand.nextInt(50);//random gen an int
-			this.emp_ID = String.valueOf(temp);//change back to string
+//			int temp = Integer.parseInt(emp_ID); //change string to int
+////			temp =  rand.nextInt(50);//random gen an int
+////			this.emp_ID = String.valueOf(temp);//change back to string
+////			this.propertyChanged(EmployeeFieldNames.EMP_ID);
+			this.emp_ID = emp_ID;
 			this.propertyChanged(EmployeeFieldNames.EMP_ID);
+
 		}
 
 		return this;
@@ -236,7 +236,6 @@ public class EmployeeEntity extends BaseEntity<EmployeeEntity> {
 
 		this.setFirstName(apiEmployee.getFirstName());
 		this.setLastName(apiEmployee.getLastName());
-		//this.setEmpID(apiEmployee.getLastName());
 		this.setEmpID(apiEmployee.getEmpID());
 		this.setBool(apiEmployee.getBool());
 		this.setRole(apiEmployee.getRole());
